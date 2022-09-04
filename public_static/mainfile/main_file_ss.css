@@ -1,0 +1,395 @@
+/*Header Div settings*/
+body{
+    overflow-x: hidden;
+
+}
+#header-menu-container{
+    background-color: black;
+    color: #dddddd;
+
+}
+
+#main-form-item li{
+    margin-bottom: 30px;
+}
+
+
+#menu-btn{
+    transform: translateX(0px);
+    cursor: pointer;
+}
+
+#user-btn{
+    padding: 0px;
+    margin: 0px;
+    transform: translateX(300px);
+    transition: all 0.4s;
+}
+
+
+
+#user-btn a{
+    color: white;
+    text-decoration: none;
+}
+
+#user-btn:hover{
+    background-color: rgba(97,97,97,0.6);
+}
+
+#heading-btn{
+    transform: translateX(60px);
+    color: #9fcdff;
+}
+/*End*/
+#detailed-div{
+    padding-bottom: 10px;
+    font-size: 14px;
+}
+#detailed-div li{
+    margin-bottom: 5px;
+}
+#detailed-div li b{
+text-transform: uppercase;
+
+}
+#detailed-div .btn{
+    margin-left: 80px;
+    background-color: mediumseagreen;
+}
+
+/*Side Menu Settings*/
+#main-screen-div{
+    transition: all 0.4s;
+    max-height: 100%;
+
+}
+.side-menu{
+   /*position: absolute;*/
+    /*left: 0;*/
+    /*top: 0;*/
+    max-width: 250px;
+
+    padding: 0 20px 100px 20px;
+    background-color: black;
+    color: #dddddd;
+    overflow-x: hidden;
+}
+.side-menu .col-12{
+    padding: 10px;
+    margin: 0;
+    cursor: pointer;
+    font-size: 20px;
+
+}
+
+.side-menu .col-12:hover{
+    background-color: rgba(97,97,97,0.6);
+
+}
+.side-menu .col-12 a{
+    width: 100%;
+}
+.side-menu .col-12 a:visited{
+    background-color: #0b2e13;
+}
+/*Menu Toggle*/
+.slide-side-menu{
+    transform: translateX(-190px);
+    position: relative;
+}
+.slide-menu-icons{
+    position: absolute;
+    right: 12px;
+    font-size: 1.5rem;
+    visibility: hidden;
+    transition: visibility 0.1s;
+}
+.slide-menu-icons-display{
+    visibility: visible;
+}
+
+.smallmenu{
+    display: none;
+}
+.small-menu-list{
+
+    list-style-type: none;
+}
+
+
+
+/*End*/
+
+.filter-Menu{
+    margin-top: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: 3px solid black ;
+    box-shadow: 0 10px 10px 8px rgba(0,0,0,0.1);
+    transition: all 0.4s;
+}
+/*Centre Form */
+#center-div{
+
+}
+
+#center-form{
+    margin-top: 40px;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-top: 3px solid black ;
+    box-shadow: 0 10px 10px 8px rgba(0,0,0,0.1);
+}
+
+#center-item-display{
+    margin-left: 30px;
+    margin-top: 40px;
+    box-shadow: 0 0 15px 18px rgba(0,0,0,0.1);
+
+}
+
+#list-items{
+    /*padding: 5px 10px;*/
+    padding: 0;
+    background-color: rgba(97,97,97,0.3);
+    overflow-y: scroll;
+    margin: auto 0;
+    list-style-type: none ;
+    min-height: 350px;
+    max-height: 420px;
+}
+#list-items li{
+    z-index: 1;
+    background-color: rgba(255,255,255,0.7);
+
+    padding: 10px 15px;
+    border-bottom: 1px solid grey;
+
+}
+#list-items li:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+/*Username dropdown*/
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+    margin-top: 0;
+}
+
+.dropbtn:focus {
+    background-color: grey;
+}
+
+.dropbtn:focus {
+    border: none;
+}
+
+.dropdown-menu-own {
+    position: relative;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: black;
+    left: 0;
+    top: 100%;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {color: black;background-color: #ddd;}
+
+.show {display: block;}
+
+.display-btns{
+    display: none;
+}
+
+/*End of centre Form*/
+
+/*POP UP window*/
+.pop-up{
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+    display: none;
+}
+
+.popup-content{
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+    margin: 6% auto;
+    width: 91%;
+    height: auto;
+    max-height: 100%;
+    padding: 20px;
+    overflow-y: scroll ;
+}
+.review-heading{
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: bold;
+
+}
+.close-btn{
+    font-size: 18px;
+
+}
+.close-btn:hover{
+    color: grey;
+    cursor: pointer;
+}
+.transfer_Succ{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    background-color: rgba(123, 239, 178, 0.88);
+    color: black;
+    margin: 15% auto;
+    /*transform: translateY(-60px);*/
+    display: none;
+    padding: 25px;
+    font-size: 31px;
+    text-transform: uppercase;
+
+}
+.redirect-popup{
+    position: fixed;
+    top: 0;
+    display: none;
+    width: 100%;
+    height: 100px;
+    margin: 10% auto;
+    padding: 20px;
+    color: white;
+    z-index: 1;
+    font-size: 30px;
+    background-color: rgba(236, 100, 75, 0.81);
+    text-transform: capitalize;
+}
+
+/*FILTER DIV OPTIONSS*/
+.filter-Menu{
+    max-height: 530px;
+    overflow-y: scroll;
+
+}
+.filter-heading{
+    font-weight: bold;
+    font-size: 18px;
+    text-transform: uppercase;
+
+}
+.filter-options-own::-webkit-scrollbar{
+    width: 10px;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.2)  ;
+    border-radius: 10px;
+
+}
+.filter-options-own::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+.filter-options-own::-webkit-scrollbar-thumb{
+    background-color: black;
+    border-radius: 10px;
+}
+.filter-options-own{
+    height: 150px;
+    overflow-y: scroll;
+}
+
+/*Custom CheckMark*/
+
+/*Defining Container Settings*/
+.checkbox-container{
+    padding-left: 35px;
+    margin-bottom: 12px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+    font-size: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+}
+/*Hidding Default Checkbox*/
+.checkbox-container input{
+    height: 0;
+    width: 0;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+
+
+}
+/*CheckMark Settings*/
+.checkmark{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    top: 3px;
+    left: 0;
+    background-color: #eee;
+
+}
+.checkbox-container:hover input ~ .checkmark{
+    background-color: #ccc;
+}
+.checkbox-container input:checked ~ .checkmark {
+    background-color: black;
+}
+.checkmark:after{
+    content: "";
+    position: absolute;
+    display: none;
+}
+.checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+.checkbox-container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.filter-content-setts{
+    height: 200px;
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+
+    background-color: #eeeeee;
+    color: black;
+}

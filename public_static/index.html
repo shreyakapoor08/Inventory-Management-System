@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="./Images/favicon_labotron.ico" rel="shortcut icon">
+    <!--Minimum Scale an dmaximum Scale -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1, minimum-scale=1">
+    <title>Labotron</title>
+    <link rel="stylesheet" href="Bootstrap/dist/css/bootstrap.css">
+    <script src="Bootstrap/dist/js/jquery-3.2.1.js"></script>
+    <script src="Bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="header_styling.css">
+    <link href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="section-stylesheet.css" rel="stylesheet">
+    <script src="index2_frontendStyling.js"></script>
+    <script src="index_js.js"></script>
+    <link href="mainfile/main_file_ss.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row" id="header-row">
+        <div class="col-5 col-md-3">
+            <div class="row justify-content-lg-start justify-content-center">
+                <div class="col-3 pr-0" style="transform: rotate(10deg)">
+                    <img src="./Images/labotron_logo.png" width="90%">
+                </div>
+                <div class="col-6 pl-0 main-heading-settings">
+                    Labotron</div>
+            </div>
+        </div>
+        <div class="col-12 p-0 p-md-2  col-md-5 responsive-menu">
+            <div class="navbar" id="header-nav-bar">
+                <button class=" btn nav-item cross-button" onclick="closemenu()" ><i class="fas fa-times"></i></button>
+                <div class="nav-item"> <a href="/"> Home</a></div>
+                <div class="nav-item dropdown" >
+                    <a style="text-decoration: none;color: inherit"  href="./mainfile/mainfile.html?category=product" id="dropdownMenuLink">Products </a>
+
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="./mainfile/mainfile.html?category=department" id="DepartmentLink"> Departments</a>
+
+                </div>
+                <div class="nav-item"> <a href="./mainfile/mainfile.html?category=vendor"> Vendor</a></div>
+                <div class="nav-item"> <a href=""> Faqs</a></div>
+            </div>
+        </div>
+
+        <div class="col-6 col-md-4">
+            <div class="row pt-2">
+                <div class="col-9 col-md-6 nav-item">
+                    <!--<span id="search-header-btn">-->
+                    <!--<i class="fas fa-search"></i> </span><input placeholder="Search" id="nav-bar-input-box" type="text">-->
+                </div>
+                <script>
+                    function myFunction() {
+                        document.getElementById("myDropdown").classList.toggle("show");
+                    }
+                </script>
+                <div class="col-5 dropdown-menu-own" id="login-user">
+                    <div class="dropbtn" onclick="myFunction()" ><i class="fas fa-user" > </i> <span id="username" > Username</span></div>
+                    <div class="dropdown-content" id="myDropdown" >
+                        <a href="./myprofile.html">View Profile</a>
+                        <a href="/logout">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1 pt-2"  onclick="openmenu()" id="responsive-menu-bar"><i class="fas fa-bars"></i></div>
+    </div>
+    <div class="row" id="carousel-row" >
+        <!--<img src="Images/ADGITM_building.jpg" width="100%" height="80%">-->
+        <!--Create a Caraousel - Images with Scrolling text - -->
+        <div class="bd-example col-12 p-0">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel" data-interval="5000">
+                <ol class="carousel-indicators" id="home-screen">
+                    <li data-target="#carouselExampleCaptions"  data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" >
+                    <div class="carousel-item active" >
+                        <img src="Images/purchase_computer_png.jpg" class="d-block w-100" alt="Database" title="Database">
+                        <div class="carousel-caption d-none d-md-block header-carousel-slide1" >
+                            <h1>Keep Track</h1>
+                            <p id="one">Add all the purchased Items to the data base</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/Transfer_computers.jpg" class="d-block w-100" alt="Transfer">
+                        <div class="carousel-caption d-none d-md-block header-carousel-slide2" >
+                            <h1>Transfer Systems</h1>
+                            <p id="two">Transfer systems within labs</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="Images/How-Does-Banner-Advertising-Work-.png" class="d-block w-100" alt="Checks">
+                        <div class="carousel-caption d-none d-md-block header-carousel-slide3" >
+                            <h1>Dynamic Control</h1>
+                            <p id="three">Controlling of all the products on a single webpage</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next" >
+                    <span class="carousel-control-next-icon" aria-hidden="true"  ></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Middle Section-->
+<div class="container-fluid w-100 pt-4 pb-4 " id="section-container">
+    <div class="row pt-5 pb-5 mr-3 ml-3 justify-content-center middlesection-container" id="middle-section-row" >
+        <div class="col-12">
+            <div class="row justify-content-center pl-5 pr-5 mt-5" >
+                <div class="col-12 col-md-6 col-lg-4 pr-2 pl-2 section" align="center">
+                    <a class="a-config"  onclick="mainpage('product')">
+                    <div class="section-item">
+                          <i class="fas fa-shopping-cart section-icon"></i>
+                    </div>
+                    </a>
+                    <div class="section-text">
+                        <div class="section-heading"><h3 class="section-text-heading"><a  onclick="mainpage('product')"> Purchased Item</a></h3></div>
+                        <div class="section-description"><p>Enter the details of the item purchased from the vendor and add it to the database</p></div>
+                    </div>
+                </div>
+                <!--Div 2 - Icon Vendor-->
+                <div class="col-12 col-md-6 col-lg-4 section pr-2 pl-2" align="center">
+                    <a onclick="mainpage('vendor')" class="a-config">
+                    <div class="section-item">
+                        <i class="fa fa-user section-icon"></i>
+                    </div>
+                    </a>
+                    <div class="section-text">
+                        <div class="section-heading"><h3 class="section-text-heading"><a onclick="mainpage('vendor')">Vendor</a></h3></div>
+                        <div class="section-description"><p>Enter the details of the vendor and add it to the database</p></div>
+                    </div>
+                </div>
+                <!--Issue The Product-->
+                <div class="col-12 col-md-6 col-lg-4 section pr-2 pl-2" align="center">
+                    <a onclick="mainpage('issue')" class="a-config">
+                    <div class="section-item">
+                            <i class="fas fa-desktop section-icon"></i>
+                    </div>
+                    </a>
+                    <div class="section-text">
+                        <div class="section-heading"><h3 class="section-text-heading"><a onclick="mainpage('issue')">Issue</a></h3></div>
+                        <div class="section-description"><p>Enter the Product to department or to the faculty</p></div>
+                    </div>
+                </div>
+                <!--Transfer-->
+
+                <div class="col-12 col-md-6 col-lg-4 section pr-2 pl-2" align="center">
+                    <a onclick="mainpage('transfer')" class="a-config">
+                        <div class="section-item">
+                                <i class="fas fa-exchange-alt section-icon"></i>
+                        </div>
+                    </a>
+                    <div class="section-text">
+                        <div class="section-heading"><h3 class="section-text-heading"><a onclick="mainpage('transfer')">Transfer</a></h3></div>
+                        <div class="section-description"><p>Transfer the product to different lab</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-5 pb-4" id="footer-container">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="row">
+                <div class="col-12"><h2>Quick Links</h2></div>
+                <div class="col-12 mt-1 mb-1 footer-links"><a href="">Transfer</a> </div>
+                <div class="col-12 mt-1 mb-1 footer-links"><a href="">Issue to department</a> </div>
+                <div class="col-12 mt-1 mb-1 footer-links"><a href="">Decard an Item</a> </div>
+
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pr-1 pl-1">
+            <div class="row">
+                <div class="col-12"><h2>Privacy Policy</h2></div>
+                <div class="col-12 mt-1 mb-1 footer-links"><a href="">Terms & Condition</a> </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4 pr-1 pl-1">
+        <div class="row justify-content-center">
+            <div class="col-12"><h5>Contact us</h5></div>
+            <div class="col-10">
+                <form method="" action="" id="footer-form">
+                    <label>
+                        <span> Name </span>
+                        <input class="input-group-text" type="text" placeholder="Abc">
+                    </label>
+                    <label>
+                        Email:
+                        <input class="input-group-text" type="email" placeholder="Abc@xyz.com">
+                    </label>
+                    <label >
+                        Message :
+                        <textarea class="input-group-text" rows="3" cols="22" placeholder="Enter Message" ></textarea>
+                    </label>
+                    <input style="display: block" class="btn btn-info" type="submit">
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

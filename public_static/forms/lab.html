@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link href="../Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../Bootstrap/dist/js/jquery-3.2.1.js"></script>
+   <script src="../Bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="../mainfile/main_file_ss.css" rel="stylesheet">
+    <link href="../header_styling.css" rel="stylesheet">
+    <script src="forms_common_scripts.js"></script>
+    <link rel="stylesheet" href="form_common_stylesheet.css">
+</head>
+<body>
+<!--HEADER ---  -->
+
+
+
+<!--END OF HEADER-->
+<style>
+    .side-menu a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<div  class="container-fluid" id="main-screen-div" style="padding-top: 70px">
+    <!--Side menu Div -->
+    <div class="row">
+        <div class="col-3 side-menu" id="side-menu">
+            <div class="row" id="side-menu-options">
+
+            </div>
+        </div>
+        <!--FORM DIV-->
+        <div class="col-9 ml-3 row"  >
+            <!--FORM --->
+            <div class="container myform-whole-container" id="departmentlab-form-container">
+                <div class="container-heading" id="departmentlab-item-heading">
+                    <h3>DEPARTMENT LAB DETAILS <i class="fas fa-user"></i></h3>
+                </div>
+                <div class="myform-inner-container" id="departmentlab-form-container-id">
+                    <form action="/lab" method="post" onsubmit="formSubmitResult('lab',event)" id="departmentlab-form">
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-6">
+                                <label for="departmentId">DEPARTMENT </label>
+                                <select type="number" class="form-control" onchange="Autofill_details(this.value)" name="departmentId" id="departmentId">
+                                    <!--Filled By Jquery-->
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="block">BLOCK NUMBER</label>
+                                <input name="block" type="number" class="form-control" readonly id="block">
+                            </div>
+                        </div>
+                        <div class="form-row justify-content-center">
+                            <div class="form-group col-md-6">
+                                <label for="labNo">LAB NUMBER</label>
+                                <input name="labNo" type="number" class="form-control" id="labNo">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="name">LAB NAME</label>
+                                <input name="name" type="text" class="form-control" id="name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-4">
+                                <label for="technician">LAB TECHNICIAN NAME</label>
+                                <input name="technician" type="text" class="form-control" id="technician">
+                            </div>
+
+                            <div class="form-group col-md-4">
+                                <label for="floor">FLOOR</label>
+                                <input name="floor" type="number" class="form-control" id="floor">
+                            </div>
+                        </div>
+                        <div class="mybtn-setts">
+                            <input type="submit" value="Submit" class="btn-class">
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div id="success-div-popup" class="transfer_Succ" align="center" >Transfer Successful
+    <p id="redirect-message">You will be redirected in 3 secs</p>
+</div>
+
+<script>
+    //Need All the Department - Need To append the name but the value will be of ID
+    function Autofill_details(value)
+    {   console.log(value);
+        // console.log(ev.value);
+        $.get(`/department/${value}`,(data)=>{
+            let block = $('#block')
+            block.attr('value',data.block)
+        })
+    }
+    let departmentSelect = $('#departmentId')
+    departmentSelect.empty();
+    let departmentList =[];
+    $.get('/department',(data)=>{
+        //Data will be of the form Array
+        for(i of data)
+        {
+            let option_val = $(`<option value="${i.id}">${i.name}</option>`)
+            departmentList.push(option_val);
+        }
+        departmentSelect.append(departmentList);
+        Autofill_details(data[0].id);
+    })
+</script>
+</body>
+</html>

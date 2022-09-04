@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="department.css">
+   <script src="../Bootstrap/dist/js/jquery-3.2.1.js"></script>
+    <script src="../Bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
+    <link href="../mainfile/main_file_ss.css" rel="stylesheet">
+    <link href="../header_styling.css" rel="stylesheet">
+    <script src="forms_common_scripts.js"></script>
+    <link href="form_common_stylesheet.css" rel="stylesheet">
+</head>
+<body>
+<!--HEADER ---  -->
+
+
+<!--END OF HEADER-->
+<style>
+    .side-menu a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<div  class="container-fluid" id="main-screen-div" style="padding-top: 70px">
+    <!--Side menu Div -->
+    <div class="row">
+        <div class="col-3 side-menu" id="side-menu">
+            <div class="row" id="side-menu-options">
+
+            </div>
+        </div>
+        <!--FORM DIV-->
+        <div class="col-9 ml-3 row" >
+            <!--FORM --->
+            <div class="container myform-whole-container" id="department-form-container">
+                <div class="container-heading" id="department-item-heading">
+                    <h3>FACULTY DETAILS <i class="fas fa-user"></i></h3>
+                </div>
+            </div>
+            <div class="myform-inner-container" style="margin-top: -60px;margin-left: 120px"  id="department-form-container-id">
+                <form action="/faculty" method="post" onsubmit="formSubmitResult('faculty',event)" id="department-wise-form">
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="fid">Faculty Id</label>
+                            <input name="fid" type="text" required class="form-control" id="fid">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="name">NAME</label>
+                            <input name="name" class="form-control" required id="name">
+                        </div>
+
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="designation">Designation</label>
+                            <input name="designation" type="text" class="form-control" required id="designation">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="responsibility">Responsibility</label>
+                            <input name="responsibility" type="text" class="form-control" required id="responsibility">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="block">BLOCK NUMBER</label>
+                            <input name="block" type="number" class="form-control" required id="block">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="floor">Staffroom Floor</label>
+                            <input name="floor" type="number" class="form-control" required id="floor">
+                        </div>
+                    </div>
+                    <div class="mybtn-setts">
+                        <input type="submit" value="Submit" class="btn-class">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="success-div-popup" class="transfer_Succ" align="center" >Transfer Successful
+    <div id="redirect-message" align="center">You will be redirected in 3 secs</div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="../Bootstrap/dist/js/jquery-3.2.1.js"></script>
+    <link rel="stylesheet" href="department.css">
+   <script src="../Bootstrap/dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="../Bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../mainfile/main_file_ss.css">
+    <link rel="stylesheet" href="../header_styling.css">
+<script src="issue_product.js"></script>
+    <script src="forms_common_scripts.js"></script>
+    <link href="form_common_stylesheet.css" rel="stylesheet">
+    <style>
+    .product-details{
+        color: #5D92B1 ;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    #department-wise-form input{
+        width: 50%;
+        margin: 0 10px;
+        padding: 5px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+
+    }
+    #department-wise-form select{
+        width: 50%;
+        margin: 0 10px;
+        padding: 5px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+
+    }
+    #department-wise-form input:focus{
+        /*outline: n;*/
+        border: 1px solid transparent;
+    }
+</style>
+
+</head>
+<body>
+<!--HEADER ---  -->
+
+
+<!--END OF HEADER-->
+<style>
+    .side-menu a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<div  class="container-fluid" id="main-screen-div" style="padding-top: 70px">
+    <!--Side menu Div -->
+    <div class="row">
+        <div class="col-3 side-menu" id="side-menu">
+            <div class="row" id="side-menu-options">
+
+            </div>
+        </div>
+        <!--FORM DIV-->
+        <div class="col-9 ml-3 row" >
+            <!--FORM --->
+            <div class="container myform-whole-container" id="department-form-container">
+                <div class="container-heading" id="department-item-heading">
+                    <h3>ISSUE A PRODUCT <i class="fas fa-user"></i></h3>
+                </div>
+            </div>
+            <div class="myform-inner-container" id="department-form-container-id">
+
+                <form action="/issue" method="post" id="department-wise-form" onsubmit="formSubmitResult('issue',event)">
+                    <div class="form-row mt-1 pt-2 pb-2">
+                        <h4 align="center" style="width: 100%">Select Product</h4>
+                        <div class="col-12 row justify-content-center mt-1 mb-1">
+                            <select class="col-3 product-details" name="product-list-item" id="product-list" onchange="displayPDetails(this.value)">
+                                <option></option>
+                            </select>
+                        </div>
+                        <div class="col-6 product-details form-group">
+                            Product Name <input readonly name="product-name" required id="product-name">
+                        </div>
+                        <div class="col-6 product-details form-group">Product Id <input readonly name="productId" id="product-id"> </div>
+                        <div class="col-6 product-details form-group">Quantity <input readonly name="quantity" id="quantity"> </div>
+                        <div class="col-6 product-details form-group">Remaining Quantity <input type="number" readonly name="remaining_qty" id="rem-quantity"> </div>
+
+                    </div>
+                    <div class="form-row ">
+                        <div class="col-md-12">
+                            <h5 align="center">PREVIOUSLY PRODUCT ADDED TO LAB/DEPARTMENT</h5><br>
+                            <div class="col-12 row">
+                                <div class="col-6">
+                                    <label>LABS</label>
+                                    <!--Dynamically fill Previously Addition of Product to Labs-->
+                                    <ul id="lab-details">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                                <div class="col-6">
+                                    <label>DEPARTMENT</label>
+                                    <ul id="dept-details">
+                                        <li></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <!--Finally Choose in Which Lab/Department - ADD-->
+                            <label>ISSUE PRODUCT TO LAB / FACULTY</label><br>
+
+                            <label>Faculty</label> <input onchange="showSelectOptions(this)" style="width: 10%;" type="radio" class=" " name="category" value="faculty" >
+                            <label>Lab</label> <input onchange="showSelectOptions(this)" style="width: 10%" type="radio" class="" name="category" value="lab" >
+                            <!--<select id="product-options" name="productPid">-->
+                            <!--<option></option>-->
+                            <!--</select>-->
+                        </div>
+                        <div class="form-group col-md-6">
+                            <input type="text" style="display: none" id="facultyorlab" name="id" >
+                            <label for="departmentorlab"> Select </label>
+                            <select class="form-control" style="margin-top: 10px;margin-left: 15px;display: inline-block;height: 40px; width: 200px" type="number" name="deptorlab" id="departmentorlab">
+                                <option ></option>
+                            </select>
+
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="qty">Quantity</label>
+                            <select required id="qty" name="qty">
+                                <option></option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="mybtn-setts">
+                        <input style="width: 100%" type="submit" value="Submit" class="btn btn-class">
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div id="success-div-popup" class="transfer_Succ" align="center" >Transfer Successful
+    <p id="redirect-message">You will be redirected in 3 secs</p>
+</div>
+
+</body>
+</html>
+
+<!-- <div class="form-group col-md-6">
+                <label for="DeptName">DEPT NAME</label>
+                <select class="form-control" id="DeptName">
+                    <option>CSE</option>
+                    <option>IT</option>
+                    <option>ECE</option>
+                    <option>MECH</option>
+                    <option>EEE</option>
+                    <option>CIVIL</option>
+                </select>
+            </div>
+
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="BlockNumber">BLOCK NUMBER</label>
+                <input type="number" class="form-control" id="BlockNumber">
+            </div>
+            <div class="form-group col-md-6">
+                <label for="HODName">HOD NAME</label>
+                <input type="text" class="form-control" id="HODName">
+            </div>
+        </div>-->

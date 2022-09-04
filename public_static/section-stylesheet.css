@@ -1,0 +1,101 @@
+.middlesection-container{
+    opacity: 0;
+
+}
+.midd-section-slide{
+    opacity: 1;
+    animation: slide 1s;
+}
+@keyframes slide {
+    0%{ opacity: 0;
+        transform: translateY(-20px);
+
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#carousel-row{
+   min-height: 550px;padding-top: 60px;
+}
+#section-container{
+
+    background-image: linear-gradient(rgba(61,64,91,1),rgba(61,64,91,0.5)), url("Images/cover_image_for_sections.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+}
+.a-config{
+    color: inherit;
+    text-decoration: none;
+    width: 100%;
+}
+.a-config:hover{
+    color: inherit;
+    cursor: pointer;
+}
+.section-item{
+    width: 140px;
+    height: 140px;
+    transform: rotate(45deg);
+    background-color: rgba(0,0,0,0.4);
+    box-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+    outline: 5px solid transparent;
+    border: 3px solid transparent;
+    transition: all 0.4s;
+    margin: 3px;
+    color: white;
+    padding: 20px;
+
+
+}
+.section{
+    color: white;
+}
+.section-icon{
+    font-size: 3.2rem;
+}
+i.section-icon{
+    transform: rotate(-45deg);
+    margin-top: 25px;
+}
+.section-description{
+    transition: visibility 0.1s;
+    text-align: center;
+}
+.section .section-text>.section-description{
+    visibility: hidden;
+}
+.section:hover .section-text>.section-description{
+    visibility: visible;
+}
+.section-item:hover{
+    background-color: lightgrey;
+    color: black;
+    outline-offset: 3px ;
+    outline-color: lightgrey;
+}
+.section-text{
+    margin: 35px 0;
+    padding: 10px;
+    text-align: justify;
+}
+.section-text-heading{
+    text-transform: uppercase;
+    letter-spacing: 1.3px;
+    text-align: center;
+}
+
+.section-text-heading a{
+    text-decoration: none;
+    color: inherit;
+}
+@media screen and (max-width: 760px) {
+    #carousel-row{
+        min-height: 300px;
+    }
+    .section .section-text>.section-description{
+        visibility: visible;
+    }
+}

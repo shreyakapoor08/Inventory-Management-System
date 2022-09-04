@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <script src="../Bootstrap/dist/js/jquery-3.2.1.js"></script>
+    <script src="../Bootstrap/dist/js/bootstrap.js"></script>
+    <link href="../Bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link href="../mainfile/main_file_ss.css" rel="stylesheet">
+    <link href="../header_styling.css" rel="stylesheet">
+    <script src="../mainfile/prerequisits_mainfile.js"></script>
+    <script src="../mainfile/mainfile.js"></script>
+    <script src="transfer.js"></script>
+    <script src="forms_common_scripts.js"></script>
+    <link href="form_common_stylesheet.css" rel="stylesheet">
+<style>
+   ul#detailed-div{
+        list-style-type: none;
+    }
+    ul#detailed-div  li{
+        display: inline-block;
+        width: 40%;
+        padding: 2px;
+        font-size: 13px;
+        margin: 2px;
+    }
+    .transfer-form-container{
+        background-color: lightgray;
+        padding: 5px 20px 15px 20px;
+        box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+</style>
+</head>
+<body>
+<!--HEADER ---  -->
+
+
+
+
+<!--END OF HEADER-->
+<style>
+    .side-menu a{
+        text-decoration: none;
+        color: white;
+    }
+</style>
+<div  class="container-fluid" id="main-screen-div" style="padding-top: 70px">
+    <!--Side menu Div -->
+    <div class="row">
+        <div class="col-3 side-menu" id="side-menu">
+            <div class="row" id="side-menu-options">
+
+            </div>
+        </div>
+
+        <!--FORM DIV-->
+        <div class="col-9 ml-3 row" >
+            <!--FORM --->
+            <div class="container" id="department-form-container">
+                <div class="container-heading " id="department-item-heading">
+                    <h3>TRANSFER DETAILS <i class="fas fa-user"></i></h3>
+                </div>
+
+                <div class="row transfer-form-container">
+                    <div class="col-12 pl-4" >
+                        <ul id="detailed-div">
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="pop-up" id="popup">
+    <div class="popup-content" id="popup-content">
+        <div class="col-12 close-btn" onclick="closepopup()" id="close-btn" align="right"><i class="fa fa-times"></i> </div>
+        <!--Display the content here-->
+        <h4> Transfer Review </h4>
+    </div>
+</div>
+<div id="success-div-popup" class="transfer_Succ" align="center" >Transfer Successful
+    <p id="redirect-message">You will be redirected in 3 secs</p>
+</div>
+<div class="redirect-popup" id="redirect-popup" align="center">You will be redirected in <span id="redirect-time"></span> </div>
+</body>
+</html>
